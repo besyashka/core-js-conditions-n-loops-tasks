@@ -53,7 +53,7 @@ function getMaxNumber(a, b, c) {
  *  y: number
  * }} Position
  * @param {Object} queen - The position of the queen.
- * @param {Object} king - The position of the king.
+ * @param {Object} king - The position of the king.р
  * @return {boolean} True if the queen can capture the king, false otherwise.
  *
  * @example
@@ -62,8 +62,12 @@ function getMaxNumber(a, b, c) {
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  */
-function canQueenCaptureKing(/* queen, king */) {
-  throw new Error('Not implemented');
+function canQueenCaptureKing(queen, king) {
+  return (
+    queen.x === king.x ||
+    queen.y === king.y ||
+    Math.abs(queen.x - king.x) === Math.abs(queen.y - king.y)
+  );
 }
 
 /**
